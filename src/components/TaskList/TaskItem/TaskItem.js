@@ -3,19 +3,24 @@ import cn from 'classnames';
 import deleteImg from '../../../assets/img/delete.svg';
 
 let TaskItem = (props) => {
-  const handleTaskDone = (e) => {
+  const handleClickTask = (e) => {
     if (
       e.target.tagName !== 'BUTTON' &&
       e.target.parentElement.tagName !== 'BUTTON'
     ) {
-      let id =
-        e.target.tagName === 'LI' ? e.target.id : e.target.parentElement.id;
-      props.taskDone(id);
+      props.taskDone(props.id);
+    }
+    if (e.target.dataset.type === 'mark') {
+      props.taskMark(props.id);
+    }
+    if (
+      e.target.dataset.type === 'delete' ||
+      e.target.parentElement.dataset.type === 'delete'
+    ) {
+      props.taskDelete(props.id);
     }
   };
-  const handleTaskMark = ({ target }) => {
-    props.taskMark(target.parentElement.id);
-  };
+
   return (
     <li
       className={cn(
@@ -23,17 +28,16 @@ let TaskItem = (props) => {
         { [style.important]: props.isMark },
         { [style.done]: props.isDone }
       )}
-      id={props.id}
-      onClick={handleTaskDone}
+      onClick={handleClickTask}
     >
       <span>{props.text}</span>
       <button
         className={cn(style.buttonMark, style.notImportant)}
-        onClick={handleTaskMark}
+        data-type="mark"
       >
         MARK IMPORTANT
       </button>
-      <button className={style.buttonDelete}>
+      <button className={style.buttonDelete} data-type="delete">
         <img src={deleteImg} alt="Delete" />
       </button>
     </li>

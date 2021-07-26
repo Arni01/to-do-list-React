@@ -20,6 +20,7 @@ class App extends Component {
     ],
     newTaskText: '',
     taskList: [],
+    sortType: 'All',
   };
 
   handleSearch = (value) => {
@@ -35,6 +36,7 @@ class App extends Component {
         ...item,
         isActive: item.name === nameLink.innerText,
       })),
+      sortType: nameLink.innerText,
     }));
   };
 
@@ -45,6 +47,7 @@ class App extends Component {
     });
   };
   handleCreateNewTask = () => {
+    if (this.state.newTaskText === '') return;
     this.setState((state) => ({
       ...state,
       taskList: [
@@ -82,6 +85,11 @@ class App extends Component {
       return { taskList };
     });
   };
+  hadnleTaskDelete = (id) => {
+    this.setState((prevState) => ({
+      taskList: prevState.taskList.filter((item) => item.id !== id),
+    }));
+  };
 
   render() {
     return (
@@ -103,6 +111,9 @@ class App extends Component {
           taskList={this.state.taskList}
           taskDone={this.handleTaskDone}
           taskMark={this.handleTaskMark}
+          taskDelete={this.hadnleTaskDelete}
+          sortType={this.state.sortType}
+          searchValue={this.state.searchValue}
         />
       </div>
     );

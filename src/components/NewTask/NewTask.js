@@ -2,8 +2,13 @@ import { Button } from 'react-bootstrap';
 import style from './NewTask.module.css';
 
 let NewTask = (props) => {
-  const handleTextarea = ({ target }) => {
-    props.handleNewTaskText(target.value);
+  const handleTextarea = (e) => {
+    // console.log(e);
+    // if (e.key === 'Enter') {
+    //   props.createNewTask();
+    //   return;
+    // }
+    props.handleNewTaskText(e.target.value);
   };
 
   return (
@@ -16,6 +21,7 @@ let NewTask = (props) => {
         rows="15"
         value={props.textTask}
         onChange={handleTextarea}
+        // onKeyDownCapture={handleTextarea}
       ></textarea>
       {/* <button className={style.newTaskBtn}>ADD</button> */}
       <Button variant="primary" size="lg" onClick={props.createNewTask}>
