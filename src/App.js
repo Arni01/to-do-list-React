@@ -4,6 +4,11 @@ import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
 import NewTask from './components/NewTask/NewTask';
 import TaskListContainer from './components/TaskList/TaskListContainer';
+import { nanoid } from 'nanoid';
+
+const createId = () => {
+  return nanoid();
+};
 
 class App extends Component {
   state = {
@@ -14,7 +19,7 @@ class App extends Component {
       { id: 3, name: 'Done', isActive: false },
     ],
     newTaskText: '',
-    taskList: [{ id: 1, text: null, isMark: false, isDone: false }],
+    taskList: [],
   };
 
   handleSearch = (value) => {
@@ -41,13 +46,41 @@ class App extends Component {
   };
   handleCreateNewTask = () => {
     this.setState((state) => ({
-      ...this.state,
+      ...state,
       taskList: [
-        ...this.state.taskList,
-        { id: 1, text: state.newTaskText, isMark: false, isDone: false },
+        ...state.taskList,
+        {
+          id: createId(),
+          text: state.newTaskText,
+          isMark: false,
+          isDone: false,
+        },
       ],
       newTaskText: '',
     }));
+  };
+
+  handleTaskDone = (id) => {
+    const index = this.state.taskList.findIndex((el) => el.id === id);
+    this.setState((prevState) => {
+      let taskList = [...prevState.taskList];
+      taskList[index] = {
+        ...prevState.taskList[index],
+        isDone: !prevState.taskList[index].isDone,
+      };
+      return { taskList };
+    });
+  };
+  handleTaskMark = (id) => {
+    const index = this.state.taskList.findIndex((el) => el.id === id);
+    this.setState((prevState) => {
+      let taskList = [...prevState.taskList];
+      taskList[index] = {
+        ...prevState.taskList[index],
+        isMark: !prevState.taskList[index].isMark,
+      };
+      return { taskList };
+    });
   };
 
   render() {
@@ -66,7 +99,11 @@ class App extends Component {
           createNewTask={this.handleCreateNewTask}
           handleNewTaskText={this.handleNewTaskText}
         />
-        <TaskListContainer />
+        <TaskListContainer
+          taskList={this.state.taskList}
+          taskDone={this.handleTaskDone}
+          taskMark={this.handleTaskMark}
+        />
       </div>
     );
   }
