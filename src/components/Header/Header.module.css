@@ -1,0 +1,40 @@
+header {
+  display: inline-grid;
+  grid-template-columns: minmax(175px, 1fr) 3.5fr;
+  max-width: 783px;
+  height: 44px;
+  margin-left: 23px;
+}
+
+.wrapperLogo {
+  max-width: 175px;
+  margin-right: 19px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.headerInput {
+  min-width: 250px;
+  height: 41px;
+  background: linear-gradient(0deg, #f6f6f6, #f6f6f6), #fefefe;
+  border: 1px solid #e2e2e2;
+  box-sizing: border-box;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  background-image: url(/src/assets/img/search.svg);
+  background-repeat: no-repeat;
+  background-position: top 14px left 15px;
+  font-weight: 500;
+}
+
+header input[type='text'] {
+  padding-left: 39px;
+}
+
+header input::placeholder {
+  opacity: 0.3;
+}

@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import store from './store/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App
+      appState={store.getState()}
+      dispatch={(action) => store.dispatch(action)}
+    />
   </React.StrictMode>,
   document.getElementById('root')
 );

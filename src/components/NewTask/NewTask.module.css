@@ -1,0 +1,38 @@
+.newTask {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 47px;
+  margin-right: 5px;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 759px;
+  max-height: 156px;
+}
+
+.newTask label {
+  font-size: 12px;
+  line-height: 15px;
+  color: #706e6b;
+}
+
+.newTask textarea {
+  margin-top: 3px;
+  background: #ffffff;
+  border: 1px solid #dddbda;
+  box-sizing: border-box;
+  border-radius: 4px;
+  resize: none;
+}
+
+.newTask button {
+  margin-top: 10px;
+  font-size: 16px;
+  width: 191px;
+  align-self: flex-end;
+  /* padding: 10px 16px;
+  align-self: flex-end;
+  background: #2f80ed; */
+  /* border: 0; */
+  /* color: #ffffff;
+  cursor: pointer; */
+}
