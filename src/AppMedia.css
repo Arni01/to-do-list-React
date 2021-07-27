@@ -1,0 +1,74 @@
+@media (max-width: 1440px) {
+  .container {
+    margin-top: calc(10px + (20 - 10) * ((100vw - 320px) / (1440 - 320)));
+  }
+  nav {
+    height: calc(40px + (50 - 40) * ((100vw - 320px) / (1440 - 320)));
+    margin-left: calc(5px + (45 - 5) * ((100vw - 320px) / (1440 - 320)));
+
+    margin-top: calc(15px + (31 - 15) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .new-task {
+    margin-left: calc(5px + (47 - 5) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .task {
+    margin-top: calc(15px + (23 - 15) * ((100vw - 320px) / (1440 - 320)));
+    margin-left: calc(5px + (40 - 5) * ((100vw - 320px) / (1440 - 320)));
+    margin-bottom: calc(30px + (67 - 30) * ((100vw - 320px) / (1440 - 320)));
+  }
+
+  .task__item {
+    margin-bottom: calc(10px + (17 - 10) * ((100vw - 320px) / (1440 - 320)));
+    padding-left: calc(8px + (23 - 8) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .new-task__btn,
+  .task {
+    font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .task__item:hover .button__mark {
+    font-size: calc(10px + (14 - 10) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .important::before {
+    left: calc(5px + (19 - 5) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .task__item.important {
+    padding-left: calc(32px + (48 - 32) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .new-task__btn {
+    width: calc(150px + (191 - 150) * ((100vw - 320px) / (1440 - 320)));
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    background-size: 90% auto;
+  }
+  header {
+    margin-left: calc(5px + (23 - 5) * ((100vw - 768px) / (1024 - 768)));
+  }
+  .nav__list .nav__item {
+    width: 33.3%;
+  }
+}
+
+@media (max-width: 764px) {
+  body {
+    font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (764 - 320)));
+  }
+  header {
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    display: block;
+    max-width: 100%;
+  }
+  .wrapper-logo {
+    display: none;
+  }
+  .header__input {
+    width: 100%;
+  }
+}

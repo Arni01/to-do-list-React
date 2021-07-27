@@ -1,0 +1,22 @@
+.task {
+  max-width: 763px;
+  margin-left: 40px;
+  margin-top: 23px;
+  margin-right: 5px;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1440px) {
+  .task {
+    margin-top: calc(15px + (23 - 15) * ((100vw - 320px) / (1440 - 320)));
+    margin-left: calc(5px + (40 - 5) * ((100vw - 320px) / (1440 - 320)));
+    margin-bottom: calc(30px + (67 - 30) * ((100vw - 320px) / (1440 - 320)));
+    font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1440 - 320)));
+  }
+}

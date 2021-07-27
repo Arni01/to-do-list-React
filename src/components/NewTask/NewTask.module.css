@@ -1,0 +1,53 @@
+.newTask {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 47px;
+  margin-right: 5px;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 759px;
+  max-height: 156px;
+}
+
+.newTask label {
+  font-size: 12px;
+  line-height: 15px;
+  color: #706e6b;
+}
+
+.newTask textarea {
+  margin-top: 3px;
+  background: #ffffff;
+  border: 1px solid #dddbda;
+  box-sizing: border-box;
+  border-radius: 4px;
+  resize: none;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.wrapper button {
+  /* margin-top: 10px; */
+  font-size: 16px;
+  width: 191px;
+  margin-left: auto;
+}
+
+.wrapper div {
+  padding: 8px 16px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1440px) {
+  .newTask {
+    margin-left: calc(5px + (47 - 5) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .newTask button {
+    font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1440 - 320)));
+    width: calc(150px + (191 - 150) * ((100vw - 320px) / (1440 - 320)));
+  }
+}
