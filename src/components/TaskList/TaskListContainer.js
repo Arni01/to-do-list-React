@@ -23,8 +23,8 @@ class TaskListContainer extends PureComponent {
             this.searchTask(item, this.props.searchValue)
           ),
         });
+        return;
       }
-      if (this.props.taskList.length === 0) return;
       if (this.props.sortType === 'Active') {
         this.setState({
           taskList: this.props.taskList.filter((item) => !item.isDone),

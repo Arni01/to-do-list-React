@@ -38,3 +38,28 @@ header input[type='text'] {
 header input::placeholder {
   opacity: 0.3;
 }
+
+@media (max-width: 1024px) {
+  header {
+    margin-left: calc(5px + (23 - 5) * ((100vw - 768px) / (1024 - 768)));
+  }
+}
+
+@media (max-width: 764px) {
+  header {
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    display: block;
+    max-width: 100%;
+  }
+  .wrapperLogo {
+    display: none;
+  }
+  .headerInput {
+    width: 100%;
+  }
+}

@@ -23,6 +23,20 @@ class App extends Component {
     sortType: 'All',
   };
 
+  componentDidMount() {
+    if (localStorage.getItem('todoList')) {
+      console.log('DID_MOUNT');
+      this.setState({ taskList: JSON.parse(localStorage.getItem('todoList')) });
+    }
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.taskList !== this.state.taskList) {
+      console.log('DID_UPDATE');
+      localStorage.setItem('todoList', JSON.stringify(this.state.taskList));
+      // this.forceUpdate();
+    }
+  }
+
   handleSearch = (value) => {
     this.setState({
       ...this.state,
@@ -47,7 +61,6 @@ class App extends Component {
     });
   };
   handleCreateNewTask = () => {
-    if (this.state.newTaskText === '') return;
     this.setState((state) => ({
       ...state,
       taskList: [
@@ -102,11 +115,13 @@ class App extends Component {
           nav={this.state.navigator}
           activeLink={this.handleActiveLInk}
         />
-        <NewTask
-          textTask={this.state.newTaskText}
-          createNewTask={this.handleCreateNewTask}
-          handleNewTaskText={this.handleNewTaskText}
-        />
+        {this.state.sortType !== 'Done' && (
+          <NewTask
+            textTask={this.state.newTaskText}
+            createNewTask={this.handleCreateNewTask}
+            handleNewTaskText={this.handleNewTaskText}
+          />
+        )}
         <TaskListContainer
           taskList={this.state.taskList}
           taskDone={this.handleTaskDone}

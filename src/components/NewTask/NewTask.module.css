@@ -24,15 +24,30 @@
   resize: none;
 }
 
-.newTask button {
+.wrapper {
+  display: flex;
+  align-items: center;
   margin-top: 10px;
+}
+
+.wrapper button {
+  /* margin-top: 10px; */
   font-size: 16px;
   width: 191px;
-  align-self: flex-end;
-  /* padding: 10px 16px;
-  align-self: flex-end;
-  background: #2f80ed; */
-  /* border: 0; */
-  /* color: #ffffff;
-  cursor: pointer; */
+  margin-left: auto;
+}
+
+.wrapper div {
+  padding: 8px 16px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1440px) {
+  .newTask {
+    margin-left: calc(5px + (47 - 5) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .newTask button {
+    font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1440 - 320)));
+    width: calc(150px + (191 - 150) * ((100vw - 320px) / (1440 - 320)));
+  }
 }

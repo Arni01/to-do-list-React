@@ -49,3 +49,18 @@ nav {
   text-decoration: none;
   text-align: center;
 }
+
+@media (max-width: 1440px) {
+  nav {
+    height: calc(40px + (50 - 40) * ((100vw - 320px) / (1440 - 320)));
+    margin-left: calc(5px + (45 - 5) * ((100vw - 320px) / (1440 - 320)));
+
+    margin-top: calc(15px + (31 - 15) * ((100vw - 320px) / (1440 - 320)));
+  }
+}
+
+@media (max-width: 1024px) {
+  .navList .navItem {
+    width: 33.3%;
+  }
+}

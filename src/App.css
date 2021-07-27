@@ -29,3 +29,21 @@ button:active,
 button:focus {
   outline: none;
 }
+
+@media (max-width: 1440px) {
+  .container {
+    margin-top: calc(10px + (20 - 10) * ((100vw - 320px) / (1440 - 320)));
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    background-size: 90% auto;
+  }
+}
+
+@media (max-width: 764px) {
+  body {
+    font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (764 - 320)));
+  }
+}

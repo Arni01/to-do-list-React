@@ -85,3 +85,20 @@
 .taskItem:hover.done .buttonMark {
   display: none;
 }
+
+@media (max-width: 1440px) {
+  .taskItem {
+    margin-bottom: calc(10px + (17 - 10) * ((100vw - 320px) / (1440 - 320)));
+    padding-left: calc(8px + (23 - 8) * ((100vw - 320px) / (1440 - 320)));
+  }
+
+  .taskItem:hover .buttonMark {
+    font-size: calc(10px + (14 - 10) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .important::before {
+    left: calc(5px + (19 - 5) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .taskItem.important {
+    padding-left: calc(32px + (48 - 32) * ((100vw - 320px) / (1440 - 320)));
+  }
+}
