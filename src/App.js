@@ -33,7 +33,6 @@ class App extends Component {
     if (prevState.taskList !== this.state.taskList) {
       console.log('DID_UPDATE');
       localStorage.setItem('todoList', JSON.stringify(this.state.taskList));
-      // this.forceUpdate();
     }
   }
 

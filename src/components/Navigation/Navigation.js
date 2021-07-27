@@ -1,9 +1,7 @@
 import style from './Navigation.module.css';
 import cn from 'classnames';
-import { Button } from 'react-bootstrap';
 
 let Navigation = (props) => {
-  // handleClickNav = ()
   return (
     <nav>
       <ul className={style.navList}>
@@ -18,16 +16,6 @@ let Navigation = (props) => {
             </li>
           );
         })}
-        {/* <li className={cn(style.navItem, style.active)} data-action="all">
-          <span>All</span>
-           <Button variant="link">All</Button> 
-        </li>
-        <li className={style.navItem} data-action="active">
-          <span>Active</span>
-        </li>
-        <li className={style.navItem} data-action="done">
-          <span>Done</span>
-        </li> */}
       </ul>
     </nav>
   );
